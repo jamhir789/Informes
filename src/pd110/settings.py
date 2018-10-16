@@ -28,7 +28,16 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+#requisitos para el correo
+EMAIL_HOST = 'SMTP.gmail.com'
+EMAIL_HOST_USER ='medininjamhir@gmail.com'
+EMAIL_HOST_PASSWORD ='arduino789'
+EMAIL_PORT = 587
+EMAIL_USE_TLS =True
+#para usar gmail hay que desbloquear la seguridad a aplicaciones menos seguras
+#https://myaccount.google.com/lesssecureapps?pli=1
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -120,3 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_pro","static"),
+    #'/var/www/static/',
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env","static_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env","media_root")

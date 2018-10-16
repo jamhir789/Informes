@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from boletin import views
 
 #from boletin.views inicio
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', views.inicio, name='inicio')
+    path('inicio/', views.inicio, name='inicio'),
+    path('contact/', views.contact, name='contact'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, documment_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, documment_root=settings.MEDIA_ROOT)
