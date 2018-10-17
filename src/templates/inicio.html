@@ -1,22 +1,62 @@
 {% extends "base.html" %}
+{%load crispy_forms_tags%}
 
-
+{%block head_title%}bienvenido | {%endblock%}
 <hr/>
 
+{%block jumbo%}
+<div class="row">
+  <div class="col-sm-4 col-xs-12">
 <main role="main" class="container">
   <div class="jumbotron">
-    <h1>Navbar example</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+    <h1>Django</h1>
+    <p class="lead">este proyecto esta basado en la experiencia en django</p>
     <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
   </div>
 </main>
+</div>
+
+<div class="col-sm-6" style="background-color:black;height:300px;">
+
+</div>
+</div>
+{%endblock%}
 
 </hr>
-{{title}}</br>
 
-{% block content %}
-  <form class="" action="" method="post">{% csrf_token%}
-      {{ elf.as_p }}
-      <input type="submit" name="" value="Registrarme">
-  </form>
+
+
+  {% block content %}
+<br>
+
+<div class="row">
+
+  <div class="col-sm-3 col-xs-12 pull-right" id="sombra">
+      <p class="lead">   {{title}} </p>
+    <form class =""    action="" method="post">{% csrf_token%}
+        {{ elf|crispy}}
+        <input type="submit" name="" value="Registrarme" >
+       <br> <br>
+    </form>
+  </hr>
+  </div>
+
+
+
+  <div class="col-sm-3"  >
+    <p class="lead txt-center">Utilizando Django &amp; bootstrap</p>
+</div>
+
+
+  <div class="col-sm-3">
+    <p class="lead txt-center">para demostrar el conocimiento adquirido</p>
+  </div>
+
+  <div class="col-sm-3">
+    <p class="lead txt-center">Author: Erick Jamhir Medina Perez</p>
+  </div>
+
+
+
+</div>
 {% endblock %}

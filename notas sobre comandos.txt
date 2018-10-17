@@ -1,0 +1,61 @@
+1.-creamos un entorno virtual con el comando:
+    virtualenv .
+
+2.- activamos el entorno virtuasl:
+      .\scripts\activate
+
+
+3.- instalamos django:
+     pip install django
+
+4.-checamos si se instalo:
+     pip freeze
+     
+
+5.-empezamos el proyecto de django
+
+     .\scripts\django-admin.py startproject nombredelproyecto
+
+6.-iniciamos el servidor para checar que funcione,tenemos que estar en la carpeta que se creo en el paso 6
+     python manage.py runserver
+
+
+---------------------PARA LAS MIGRACIONES-----------------------
+PARA EMPEZAR UNA MIGRACION ---->PYTHON MANAGE.PY MIGRATE
+
+
+
+---------------------PARA ENCENDER EL SERVIDOR------------------
+PYTHON MANAGE.PY RUNSERVER
+
+
+
+---------------------Crear super usuario para el longing de admin--------------
+python manage.py  createsuperuser
+
+
+
+---------------------para cambiar idioma de la pagina-----------------
+abrimos el archivo #settings.py#    y buscamod LENGUAGE_CODE y cambiamos En-Us por ES
+
+
+
+---------------------para crear una applicacion--------------------
+python manage.py startapp Nombre
+despues de que haa sido creada debemos agregarla a la configuracion de sitio en settings.py
+
+
+----------------------modelos------------------
+una vez creado el modelo debemos definir las clases que utilizaremos y sus funciones
+despues aplicaremos los comandos:
+                                   "python manage.py makemigrations"  --para que reconozca las actulizaciones
+                                   "python manage.py migrate"         --para que realice las migraciones
+
+
+
+
+
+
+
+
+

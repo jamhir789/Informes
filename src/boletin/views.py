@@ -4,9 +4,13 @@ from django.shortcuts import render
 import random
 from .forms import RegModelForm, ContactForm
 from .models import Registrados
+
+
+
+
 # Create your views here.
 def inicio(request):
-    titulo="hola"
+    titulo="Bienvenidos"
     if request.user.is_authenticated:
         titulo =(" bienvenido %s" %(request.user)).upper()
     form= RegModelForm(request.POST or None)
@@ -14,6 +18,7 @@ def inicio(request):
     context = {
     "elf":form,
     "title":titulo,
+    "tit":titulo,
     }
 
     if form.is_valid():
@@ -28,7 +33,8 @@ def inicio(request):
         context = {
         "title":"Gracias %s!"%(nombre)
         }
-
+        #esta linea sirve para tomar el nombre del usuario que esta activo en la pagina
+#"title":"Gracias %s!"%(nombre)
         if not nombre:
             context={
             "title": "gracias %s!"%(email)

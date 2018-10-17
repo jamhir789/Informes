@@ -1,4 +1,26 @@
 /* Show it's not fixed to the top */
+
+/*esto se aplica conforme a la etiqueta */
 body {
   min-height: 75rem;
 }
+
+
+/*esto se aplica por clase */
+.elemento{
+  box-shadow: 2px 2px 5px #999;
+}
+
+ /*  esto se aplica mediante el id de la etiqueta */
+#sombra{
+  -webkit-box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+-moz-box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+}
+
+
+
+/*
+p{
+    text-shadow: 2px 2px 0 #AAA,        
+}*/

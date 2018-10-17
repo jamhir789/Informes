@@ -1,0 +1,21 @@
+/* Show it's not fixed to the top */
+body {
+  min-height: 75rem;
+}
+
+
+
+.elemento{
+  box-shadow: 2px 2px 5px #999;
+}
+
+#sombra{
+  -webkit-box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+-moz-box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
+}
+
+p1 {
+    text-shadow: 2px 2px 0 #AAA,        /* Sombra 1 */
+                   /* Sombra 3 */
+}

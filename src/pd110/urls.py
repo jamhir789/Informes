@@ -20,11 +20,17 @@ from django.conf.urls.static import static
 
 from boletin import views
 
+
+#para importar las paginas ahi que importarlas como funciones dentro de las vistas
+#y agragarlas al urlpatterns
+from .views import about
+
 #from boletin.views inicio
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', views.inicio, name='inicio'),
     path('contact/', views.contact, name='contact'),
+    path('about/', about, name='about'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, documment_root=settings.STATIC_ROOT)
