@@ -18,9 +18,12 @@ body {
 box-shadow: 24px 2px 82px -5px rgba(0,0,0,0.65);
 }
 
-
+.right{
+    float: right;
+    background:red
+  }
 
 /*
 p{
-    text-shadow: 2px 2px 0 #AAA,        
+    text-shadow: 2px 2px 0 #AAA,
 }*/
