@@ -1,23 +1,47 @@
 {% extends "base.html" %}
 {%load crispy_forms_tags%}
+{%load static%}
 
 {%block head_title%}bienvenido | {%endblock%}
-<hr/>
+
+<style>
+{%block style%}
+.jumbotron{
+  background-color: #172548!important;
+  color: #fff!important;
+}
+
+.img{
+        width:250px;
+        height:250px;
+        }
+{%endblock%}
+</style>
+
+
 
 {%block jumbo%}
+<div class="jumbotron">
+<div class="container">
 <div class="row">
   <div class="col-sm-4 col-xs-12">
 <main role="main" class="container">
-  <div class="jumbotron">
+  <div class="">
     <h1>Django</h1>
     <p class="lead">este proyecto esta basado en la experiencia en django</p>
-    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Nuevas noticias</a>
   </div>
 </main>
+
+
+</div>
+<div class="col-sm-6 ">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vLdPL3xvq3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+  </iframe>
 </div>
 
-<div class="col-sm-6" style="background-color:black;height:300px;">
-
+</div>
 </div>
 </div>
 {%endblock%}
@@ -27,7 +51,7 @@
 
 
   {% block content %}
-<br>
+
 
 <div class="row">
 
@@ -35,7 +59,7 @@
       <p class="lead">   {{title}} </p>
     <form class =""    action="" method="post">{% csrf_token%}
         {{ elf|crispy}}
-        <input class="btn btn-primary" type="submit" name="" value="Recibir" >
+        <input class="btn btn-primary"type="submit" name="" value="Recibir" >
        <br> <br>
     </form>
   </hr>
@@ -45,11 +69,15 @@
 
   <div class="col-sm-3"  >
     <p class="lead txt-center">Utilizando Django &amp; bootstrap</p>
+    <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="fas  fa-bullhorn fa-9x"></i>
 </div>
 
 
   <div class="col-sm-3">
     <p class="lead txt-center">para demostrar el conocimiento adquirido</p>
+    <img class="img" src='{% static "img/spider.jpg" %}'/>
   </div>
 
   <div class="col-sm-3">
