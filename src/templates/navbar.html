@@ -48,7 +48,9 @@
 
             <ul class="nav navbar-nav navbar-right">
                        {% if request.user.is_authenticated %}
-                       <li><a href="{% url 'auth_logout' %}">Salir</a></li>
+                       <li> <h5 ><a href="{% url 'auth_logout' %}">Salir</a></h5></li>
+                       &nbsp;&nbsp;&nbsp;
+                         <h5 style="color: #FFF; background: #000">{{title}}</h5>
                        {% else %}
                        <li>< <a class="btn  btn-primary"  role="button"  a href="{% url 'registration_register' %}">Registrarte</a></li>
                        <!-- <li><a href="{% url 'auth_login' %}">Entrar</a></li> -->

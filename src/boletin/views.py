@@ -11,6 +11,7 @@ from .models import Registrados
 # Create your views here.
 def inicio(request):
     titulo="Bienvenidos"
+
     if request.user.is_authenticated:
         titulo =(" bienvenido %s" %(request.user)).upper()
     form= RegModelForm(request.POST or None)
@@ -43,11 +44,23 @@ def inicio(request):
         print(instance)
         print(instance.timestamp)
 
+
         #form_data = form.cleaned_data
         #abc= form_data.get("email")
         #abc2= form_data.get("nombre")
         #obj= Registrados.objects.create(email=abc,nombre=abc2)
 
+        #queryset = Registrados.objects.all().order_by("-timestamp").filter(nombre__icontains="per")
+    if request.user.is_authenticated and request.user.is_staff:
+        queryset = Registrados.objects.all().order_by("-timestamp")
+        # i=1
+        # for instance in Registrados.objects.all():
+            # print(i)
+            # print(instance.nombre )
+
+        context = {
+             "prueba": queryset,
+         }
 
     return render(request, "inicio.html",context)
 
